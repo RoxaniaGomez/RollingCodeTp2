@@ -1,37 +1,17 @@
-/*Escribe un programa que pida un número y 
-        nos diga si es divisible por 2, 3, 5 o 7 
-      (hay que decir todos por los que es divisible)
+/*Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor. *
  */
-function boton11() {
-    let num = prompt("ingrese un numero");
-    let bandera = false;
-
-    let resultado = "el numero " + num + " es divisible entre: ";
-
-    if (parseInt(num) % 2 == 0) {
-        resultado += "[2] ";
-        bandera = true;
-    }
-
-    if (parseInt(num) % 3 == 0) {
-        resultado += "[3] ";
-        bandera = true;
-    }
-
-    if (parseInt(num) % 5 == 0) {
-        resultado += "[5] ";
-        bandera = true;
-    }
-
-    if (parseInt(num) % 7 == 0) {
-        resultado += "[7] ";
-        bandera = true;
-    }
-    if (bandera == true) {
-        document.getElementById("demo11").innerHTML = (resultado);
-    } else {
-        document.getElementById("demo11").innerHTML = ("el numero " + num + " no  es divisible por 2,3,5 ni 7");
+function ejer11() {
+    let edad = [1, 2, 3];
+    let nombre = ['a', 'b', 'c'];
+    let aux;
+    for (let index = 0; index < 3; index++) {
+        aux = prompt("ingrese la edad del niño n " + (index + 1));
+        edad[index] = parseInt(aux);
+        nombre[index] = prompt("ingrese su nombre");
     }
 
 
+    let posicion = edad.indexOf(Math.max(edad[0], edad[1], edad[2]));
+
+    document.getElementById("demo11").innerHTML = ("el mayor es: " + nombre[parseInt(posicion)]);
 }

@@ -1,5 +1,3 @@
-const { Alert } = require("bootstrap");
-
 function ejer2() {
     let nota;
     do {

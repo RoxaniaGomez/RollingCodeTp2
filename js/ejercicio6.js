@@ -1,11 +1,16 @@
-/*Escribe un programa que pida dos números 
-y escriba en la pantalla cual es el mayor.*/
+/*Realiza un script que escriba una pirámide del 1 al 
+30 de la siguiente forma :
+1 
+22 
+333 
+4444 
+55555 
+666666 
+…….*/
+for (let index = 1; index < 31; index++) {
+    for (let j = 0; j < index; j++) {
+        document.write(index);
 
-function boton3() {
-    let num = prompt("ingrese primer numero");
-    let num2 = prompt("ingrese segundo numero");
-
-
-    document.getElementById("demo3").innerHTML = ("el mayor es : " + Math.max(parseInt(num), parseInt(num2)));
-
+    }
+    document.write("<br>");
 }

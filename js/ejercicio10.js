@@ -1,15 +1,35 @@
-/*Escribe un programa que pida un número y 
-nos diga si es divisible por 2, 3, 5 o 7 
-(sólo hay que comprobar si lo es por uno de los cuatro) */
-function boton10() {
-    let num = prompt("ingrese un numero");
+/*Realiza un script que pida número de filas y columnas y escriba una tabla. 
+Dentro de cada una de las celdas deberá escribirse un número consecutivo en orden
+ descendente. Si, por ejemplo, la tabla es de 7×5 los números irán del 35 al 1.*/
+function ejer10() {
+    let fila = prompt("ingrese numero de fila");
+    let columna = prompt("ingrese el numero de columnas");
+    contador = (parseInt(fila) * parseInt(columna));
 
-    if (parseInt(num) % 2 == 0 || parseInt(num) % 3 == 0 || parseInt(num) % 5 == 0 || parseInt(num) % 7 == 0) {
-        document.getElementById("demo10").innerHTML = ("el numero es divisible entre 2 o 3 o 5 o 7");
+    let dibujo = '';
+    for (let index = 0; index < (parseInt(fila) * parseInt(columna)); index++) {
 
-    } else {
-        document.getElementById("demo10").innerHTML = ("el numero no es divisible entre 2 ni 3 ni 5 ni 7");
+        if (index % columna == 0 && index != 0) {
+            if (contador < 10) {
+                dibujo += '<br>[0' + contador + ']';
+                contador--;
+            } else {
+                dibujo += '<br>[' + contador + ']';
+                contador--;
+            }
+
+        } else {
+            if (contador < 10) {
+                dibujo += '[0' + contador + ']';
+                contador--;
+            } else {
+                dibujo += '[' + contador + ']';
+                contador--;
+            }
+
+        }
     }
+    document.getElementById("demo10").innerHTML = (dibujo);
 
 
 }

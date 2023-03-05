@@ -1,10 +1,16 @@
-/*Escribe un programa de tres líneas que pida un número, pida otro número y escriba el resultado de sumar estos dos números.
-Nota: Tener en cuenta la siguiente función: parseInt */
-function boton2() {
-    let num = prompt("ingrese primer numero");
-    let num2 = prompt("ingrese segundo numero");
+function ejer5() {
+    let num;
+    let caracter = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+    do {
+        num = prompt("ingrese su dni");
+        num = parseInt(num);
+        if (isNaN(num)) {
+            window.alert("cuidado! debe ingresar numeros");
+        } else if (num >= 0 && num <= 99999999) {
+            window.alert("la letra que le corresponde es " + caracter[num % 23]);
 
-
-    document.getElementById("demo2").innerHTML = ("la suma da : " + (parseInt(num) + parseInt(num2)));
-
+        } else {
+            window.alert("el numero ingresado es incorrecto");
+        }
+    } while (confirm("desea buscar la letra que le corresponde a otro dni?"));
 }
